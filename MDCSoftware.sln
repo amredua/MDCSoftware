@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 -Apresentacao", "0 -Apresentacao", "{D5E850CE-77E2-4A69-B0B7-F192B044F203}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 -Servico", "1 -Servico", "{CBF72F44-E5A7-4CBF-A4FC-D8E42C240E06}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MDCSoftwareApresentacao", "MDCSoftwareApresentacao\", "{89EF863E-6BFE-41DC-9420-E15F6F5C6629}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54200"
+		Debug.AspNetCompiler.PhysicalPath = "MDCSoftwareApresentacao\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54200\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54200"
+		Release.AspNetCompiler.PhysicalPath = "MDCSoftwareApresentacao\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54200\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54200"
+		SlnRelativePath = "MDCSoftwareApresentacao\"
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDCSoftware.Aplicacao", "MDCSoftware.Aplicacao\MDCSoftware.Aplicacao.csproj", "{157814B2-E711-4535-B1CC-B0F10E601589}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDCSoftware.Dominio", "MDCSoftware.Dominio\MDCSoftware.Dominio.csproj", "{FF3FB626-288F-4159-B8A7-F0AD3588D8CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDCSoftware.Infraestrutura", "MDCSoftware.Infraestrutura\MDCSoftware.Infraestrutura.csproj", "{98C27E1F-69BE-4BD2-8614-7D9FE8629EE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplicacao", "2 - Aplicacao", "{FADF6ABA-7D84-49C9-871A-E3C60E50F633}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Dominio", "3 - Dominio", "{8BB4A427-3791-48BB-8E4A-FA8AED80C5DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infraestrutura", "4 - Infraestrutura", "{5DF6A000-EA15-46E1-A74C-22A182260265}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDCSoftware.Servico.Api", "MDCSoftware.Servico.Api\MDCSoftware.Servico.Api.csproj", "{DEA74F7C-4450-4F5E-A4F2-E38F82EFC039}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89EF863E-6BFE-41DC-9420-E15F6F5C6629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89EF863E-6BFE-41DC-9420-E15F6F5C6629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89EF863E-6BFE-41DC-9420-E15F6F5C6629}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{89EF863E-6BFE-41DC-9420-E15F6F5C6629}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{157814B2-E711-4535-B1CC-B0F10E601589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157814B2-E711-4535-B1CC-B0F10E601589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157814B2-E711-4535-B1CC-B0F10E601589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157814B2-E711-4535-B1CC-B0F10E601589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3FB626-288F-4159-B8A7-F0AD3588D8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3FB626-288F-4159-B8A7-F0AD3588D8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3FB626-288F-4159-B8A7-F0AD3588D8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3FB626-288F-4159-B8A7-F0AD3588D8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C27E1F-69BE-4BD2-8614-7D9FE8629EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C27E1F-69BE-4BD2-8614-7D9FE8629EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C27E1F-69BE-4BD2-8614-7D9FE8629EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C27E1F-69BE-4BD2-8614-7D9FE8629EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA74F7C-4450-4F5E-A4F2-E38F82EFC039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA74F7C-4450-4F5E-A4F2-E38F82EFC039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA74F7C-4450-4F5E-A4F2-E38F82EFC039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA74F7C-4450-4F5E-A4F2-E38F82EFC039}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89EF863E-6BFE-41DC-9420-E15F6F5C6629} = {D5E850CE-77E2-4A69-B0B7-F192B044F203}
+		{157814B2-E711-4535-B1CC-B0F10E601589} = {FADF6ABA-7D84-49C9-871A-E3C60E50F633}
+		{FF3FB626-288F-4159-B8A7-F0AD3588D8CB} = {8BB4A427-3791-48BB-8E4A-FA8AED80C5DD}
+		{98C27E1F-69BE-4BD2-8614-7D9FE8629EE7} = {5DF6A000-EA15-46E1-A74C-22A182260265}
+		{DEA74F7C-4450-4F5E-A4F2-E38F82EFC039} = {CBF72F44-E5A7-4CBF-A4FC-D8E42C240E06}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F80B8E9F-365F-44D7-A288-368448BA6E15}
+	EndGlobalSection
+EndGlobal
