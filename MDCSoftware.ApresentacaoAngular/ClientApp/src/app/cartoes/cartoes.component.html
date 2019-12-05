@@ -1,0 +1,33 @@
+<h1>MDC Software - Cartões</h1>
+
+<p *ngIf="!(cartoes$ | async)"><em>Carregando...</em></p>
+<p>
+  <a [routerLink]="['/adicionar']" class="btn btn-primary float-right mb-3">Novo Cartão</a>
+</p>
+
+<table class="table table-sm table-hover" *ngIf="(blogPosts$ | async)?.length>0">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Foto</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Carteira Identidade</th>
+      <th>Data Nascimento</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blogPost of (cartoes$ | async)">
+      <td>{{ cartao.pessoaId }}</td>
+      <td>{{ cartao.foto }}</td>
+      <td><a [routerLink]="['/cartao/', cartao.pessoaId]">{{ cartao.nome }}</a></td>
+      <td>{{ cartao.cpf }}</td>
+      <td>{{ cartao.carteiraIdentidade }}</td>
+      <td>{{ cartao.dataNascimento | date: "dd.MM.y" }}</td>
+      <td><a [routerLink]="['/cartao/atualizar/', cartao.pessoaId]" class="btn btn-primary btn-sm float-right">Atualizar</a></td>
+      <td><a [routerLink]="" (click)="delete(cartao.pessoaId)" class="btn btn-danger btn-sm float-right">Deletar</a></td>
+    </tr>
+  </tbody>
+</table>
