@@ -5,7 +5,7 @@
   <a [routerLink]="['/adicionar']" class="btn btn-primary float-right mb-3">Novo Cartão</a>
 </p>
 
-<table class="table table-sm table-hover" *ngIf="(blogPosts$ | async)?.length>0">
+<table class="table table-sm table-hover" *ngIf="(cartoes$ | async)?.length>0">
   <thead>
     <tr>
       <th>#</th>
@@ -19,7 +19,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let blogPost of (cartoes$ | async)">
+    <tr *ngFor="let cartao of (cartoes$ | async)">
       <td>{{ cartao.pessoaId }}</td>
       <td>{{ cartao.foto }}</td>
       <td><a [routerLink]="['/cartao/', cartao.pessoaId]">{{ cartao.nome }}</a></td>

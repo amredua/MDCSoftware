@@ -1,4 +1,5 @@
 ﻿using MDCSoftware.Dominio.Repositorio;
+using MDCSoftware.Negocio.Infraestrutura.Contexto;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,39 +11,39 @@ namespace MDCSoftware.Infraestrutura.Repositorio
 {
     public class RepositorioBase<TEntidade> : IDisposable, IRepositorioBase<TEntidade> where TEntidade : class
     {
-        protected DbContext Db;
+        protected ContextoInfraestrutura contexto;
 
-        public RepositorioBase(DbContext Db)
+        public RepositorioBase(ContextoInfraestrutura contexto)
         {
-            this.Db = Db;
+            this.contexto = contexto;
         }
         public void Adicionar(TEntidade entidade)
         {
-            Db.Set<TEntidade>().Add(entidade);
+            contexto.Set<TEntidade>().Add(entidade);
         }
 
         public void Atualizar(TEntidade entidade)
         {
-            Db.Entry(entidade).State = EntityState.Modified;
+            contexto.Entry(entidade).State = EntityState.Modified;
         }
 
         public async Task<TEntidade> ObterPorId(int id)
         {
-            return await Db.Set<TEntidade>().FindAsync(id);
+            return await contexto.Set<TEntidade>().FindAsync(id);
         }
 
         public async Task<IEnumerable<TEntidade>> ObterTodos()
         {
-            return await Db.Set<TEntidade>().ToListAsync();
+            return await contexto.Set<TEntidade>().ToListAsync();
         }
 
         public void Remover(TEntidade entidade)
         {
-            Db.Remove(entidade);
+            contexto.Remove(entidade);
         }
         public void Dispose()
         {
-            Db.Dispose();
+            contexto.Dispose();
         }
     }
 }

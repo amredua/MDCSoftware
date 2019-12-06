@@ -19,8 +19,8 @@ export class CartaoService {
     };
 
     constructor(private http: HttpClient) {
-        this.urlAplicacao = environment.appUrl;
-        this.urlApi = 'api/Cartoes/';
+        this.urlAplicacao = "https://localhost:44300/";//environment.appUrl;
+        this.urlApi = 'api/cartao';
     }
 
     obterTodosCartoes(): Observable<Cartao[]> {

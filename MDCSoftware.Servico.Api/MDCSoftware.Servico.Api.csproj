@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MDCSoftware.Aplicacao\MDCSoftware.Aplicacao.csproj" />
+    <ProjectReference Include="..\MDCSoftware.Infraestrutura.IoC\MDCSoftware.Infraestrutura.IoC.csproj" />
     <ProjectReference Include="..\MDCSoftware.Infraestrutura\MDCSoftware.Infraestrutura.csproj" />
   </ItemGroup>
 

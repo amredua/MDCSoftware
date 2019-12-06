@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ServicoAplicacao\ServicoAplicacaoBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MDCSoftware.Dominio\MDCSoftware.Dominio.csproj" />
     <ProjectReference Include="..\MDCSoftware.Infraestrutura\MDCSoftware.Infraestrutura.csproj" />
   </ItemGroup>

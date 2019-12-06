@@ -15,7 +15,8 @@ export class CartoesComponent implements OnInit {
     constructor(private cartaoServico: CartaoService) {
     }
 
-  ngOnInit() {
+    ngOnInit() {
+        this.carregarCartoes();
   }
 
     carregarCartoes() {

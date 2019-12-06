@@ -1,6 +1,9 @@
+using MDCSoftware.Infraestrutura.IoC;
 using MDCSoftware.Negocio.Infraestrutura.Contexto;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +27,20 @@ namespace MDCSoftware.Servico.Api
 
             services.AddDbContext<ContextoInfraestrutura>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ContextoInfraestrutura")));
+
+            services.AddCors();
+
+            services.AddMvc(options =>
+            {
+                options.OutputFormatters.Remove(new XmlDataContractSerializerOutputFormatter());
+                //options.UseCentralRoutePrefix(new RouteAttribute("api/v{version}"));
+            })
+           .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
+
+
+            RegistrarServico(services);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +50,8 @@ namespace MDCSoftware.Servico.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(option => option.AllowAnyOrigin()); ;
 
             app.UseHttpsRedirection();
 
@@ -44,6 +63,11 @@ namespace MDCSoftware.Servico.Api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static void RegistrarServico(IServiceCollection services)
+        {
+            InjecaoNativa.RegistrarServico(services);
         }
     }
 }

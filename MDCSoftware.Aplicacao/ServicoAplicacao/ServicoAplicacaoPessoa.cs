@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MDCSoftware.Aplicacao.ServicoAplicacao
 {
-    class ServicoAplicacaoPessoa : IServicoAplicacaoPessoa
+    public class ServicoAplicacaoPessoa : Interface.IServicoAplicacaoPessoa
     {
         private readonly IAplicacaoPessoa aplicacao;
 
@@ -58,7 +58,6 @@ namespace MDCSoftware.Aplicacao.ServicoAplicacao
                     throw;
                 }
             }
-            //await RepositorioPessoa.SaveChangesAsync();
         }
 
         private bool PessoaExists(int id)
@@ -112,9 +111,5 @@ namespace MDCSoftware.Aplicacao.ServicoAplicacao
             throw new NotImplementedException();
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

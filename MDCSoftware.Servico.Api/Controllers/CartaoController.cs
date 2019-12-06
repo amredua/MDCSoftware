@@ -2,6 +2,7 @@
 using MDCSoftware.Aplicacao.Cartao;
 using MDCSoftware.Aplicacao.ServicoAplicacao.Interface;
 using MDCSoftware.Dominio.Cartao;
+using MDCSoftware.Dominio.UnidadeTrabalho;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -13,14 +14,16 @@ namespace MDCSoftware.Servico.Api.Controllers
     [ApiController]
     public class CartaoController : ControllerBase
     {
-        private readonly IServicoAplicacaoPessoa servicoAplicacao;
+        private readonly Aplicacao.ServicoAplicacao.Interface.IServicoAplicacaoPessoa servicoAplicacao;
+        private readonly IUnidadeTrabalho unidadeTrabalho;
 
-        public CartaoController(IServicoAplicacaoPessoa servicoAplicacao)
+        public CartaoController(Aplicacao.ServicoAplicacao.Interface.IServicoAplicacaoPessoa servicoAplicacao,
+            IUnidadeTrabalho unidadeTrabalho)
         {
             this.servicoAplicacao = servicoAplicacao;
+            this.unidadeTrabalho = unidadeTrabalho;
         }
 
-        // GET: api/Pessoas
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DadosPessoa>>> GetPessoa()
         {
@@ -28,7 +31,6 @@ namespace MDCSoftware.Servico.Api.Controllers
             return Ok(listaPessoas);
         }
 
-        // GET: api/Pessoas/5
         [HttpGet("{id}")]
         public async Task<ActionResult<DadosPessoa>> GetPessoa(int id)
         {
@@ -42,9 +44,6 @@ namespace MDCSoftware.Servico.Api.Controllers
             return pessoa;
         }
 
-        // PUT: api/Pessoas/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPessoa(int id, DadosPessoa pessoa)
         {
@@ -55,7 +54,9 @@ namespace MDCSoftware.Servico.Api.Controllers
 
             try
             {
-               servicoAplicacao.Atualizar(pessoa);
+                servicoAplicacao.Atualizar(pessoa);
+                await unidadeTrabalho.Commit();
+
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -65,18 +66,14 @@ namespace MDCSoftware.Servico.Api.Controllers
             return NoContent();
         }
 
-        // POST: api/Pessoas
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
         public async Task<ActionResult<Pessoa>> PostPessoa(DadosPessoa dadosPessoa)
         {
             servicoAplicacao.Adicionar(dadosPessoa);
-            //await _context.SaveChangesAsync();
+            await unidadeTrabalho.Commit();
             return CreatedAtAction("GetPessoa", new { id = dadosPessoa.IdPessoa }, dadosPessoa);
         }
 
-        // DELETE: api/Pessoas/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<DadosPessoa>> DeletePessoa(int id)
         {
@@ -87,7 +84,7 @@ namespace MDCSoftware.Servico.Api.Controllers
             }
 
             servicoAplicacao.Remover(pessoa);
-            //await _context.SaveChangesAsync();
+            await unidadeTrabalho.Commit();
 
             return pessoa;
         }

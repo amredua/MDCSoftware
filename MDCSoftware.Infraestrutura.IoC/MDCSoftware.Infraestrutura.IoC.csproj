@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MDCSoftware.Aplicacao\MDCSoftware.Aplicacao.csproj" />
+    <ProjectReference Include="..\MDCSoftware.Dominio\MDCSoftware.Dominio.csproj" />
+    <ProjectReference Include="..\MDCSoftware.Infraestrutura\MDCSoftware.Infraestrutura.csproj" />
+  </ItemGroup>
+
+</Project>
